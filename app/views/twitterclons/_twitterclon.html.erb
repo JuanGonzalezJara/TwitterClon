@@ -1,12 +1,13 @@
 <div id="<%= dom_id twitterclon %>">
+
+  <h3>Aqui va una imagen</h3>
   <p>
-    <strong>Description:</strong>
+    <strong><%= twitterclon.username %></strong> @<%= twitterclon.username.downcase %> ~ hace <%= ((Time.now - twitterclon.created_at)/60).to_i %> minutos.
+    
+  </p>
+  <p>
     <%= twitterclon.description %>
   </p>
 
-  <p>
-    <strong>Username:</strong>
-    <%= twitterclon.username %>
-  </p>
 
 </div>

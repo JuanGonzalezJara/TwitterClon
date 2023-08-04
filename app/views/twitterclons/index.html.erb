@@ -2,6 +2,10 @@
 
 <h1>Twitterclons</h1>
 
+<%= form_with url: twitterclons_path, method: :get do |form|%>
+<%= form.text_field :query_text, placeholder: 'Ingresa tu busqueda', value: params[:query_text]%>
+<%end%>
+
 <div id="twitterclons">
   <% @twitterclons.each do |twitterclon| %>
     <%= render twitterclon %>

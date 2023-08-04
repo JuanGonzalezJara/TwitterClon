@@ -4,6 +4,9 @@ class TwitterclonsController < ApplicationController
   # GET /twitterclons or /twitterclons.json
   def index
     @twitterclons = Twitterclon.all
+    if params[:query_text].present?
+      @twiterclons = @twitterclons.search_full_text(params[:query_text])
+    end
   end
 
   # GET /twitterclons/1 or /twitterclons/1.json

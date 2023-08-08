@@ -8,9 +8,22 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
   </head>
 
   <body>
+    <nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+    <a class="navbar-brand" href="#">Twitter Clone</a
+
+
+    <%= form_with url: twitterclons_path, method: :get do |form|%>
+    <%= form.text_field :query_text, placeholder: 'Ingresa tu busqueda', value: params[:query_text]%>
+    <%end%>
+    </div>
+    </nav>
     <%= yield %>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

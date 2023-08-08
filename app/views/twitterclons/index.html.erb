@@ -1,18 +1,23 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Twitterclons</h1>
 
-<%= form_with url: twitterclons_path, method: :get do |form|%>
-<%= form.text_field :query_text, placeholder: 'Ingresa tu busqueda', value: params[:query_text]%>
-<%end%>
 
 <div id="twitterclons">
   <% @twitterclons.each do |twitterclon| %>
-    <%= render twitterclon %>
-    <p>
-      <%= link_to "Show this twitterclon", twitterclon %>
-    </p>
+  <div class="container pb-2">
+    <div class="row">
+      <div class="card">
+        <div class="card-body">
+          <p><strong><%= twitterclon.username %></strong> @<%= twitterclon.username.downcase.gsub(/\s+/, "") %> ~ hace <%= ((Time.now - twitterclon.created_at)/60).to_i %> minutos.</p>
+          <p><%= twitterclon.description %></p>
+          <p><%= link_to "Ver Tweet", twitterclon %></p>
+        </div>
+      </div>
+    </div>
+  </div> 
   <% end %>
 </div>
 
-<%= link_to "New twitterclon", new_twitterclon_path %>
+<%=raw pagy_nav(@pagy)%>
+
+

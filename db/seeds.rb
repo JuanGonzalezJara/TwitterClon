@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+100.times do |i|
+    @twitts = Twitterclon.create(username: Faker::JapaneseMedia::OnePiece.character,
+                                description: Faker::Lorem.sentence(word_count: 40))
+end

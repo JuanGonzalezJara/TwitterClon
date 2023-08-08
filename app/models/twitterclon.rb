@@ -1,7 +1,4 @@
 class Twitterclon < ApplicationRecord
     include PgSearch::Model
-    pg_search_scope :search_full_text, against: {
-                        username: 'A',
-                        description: 'B',
-    }
+    pg_search_scope :search_by_name, against: :username
 end

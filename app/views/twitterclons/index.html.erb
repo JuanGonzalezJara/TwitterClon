@@ -1,23 +1,19 @@
 <p style="color: green"><%= notice %></p>
-
-
-
 <div id="twitterclons">
   <% @twitterclons.each do |twitterclon| %>
-  <div class="container pb-2">
-    <div class="row">
-      <div class="card">
-        <div class="card-body">
-          <p><strong><%= twitterclon.username %></strong> @<%= twitterclon.username.downcase.gsub(/\s+/, "") %> ~ hace <%= ((Time.now - twitterclon.created_at)/60).to_i %> minutos.</p>
-          <p><%= twitterclon.description %></p>
-          <p><%= link_to "Ver Tweet", twitterclon %></p>
+    <div class="container pb-3">
+      <div class="row">
+        <div class="card">
+          <div class="card-body">
+            <p><strong><%= twitterclon.username %></strong> @<%= twitterclon.username.downcase.gsub(/\s+/, "") %> ~ hace <%= ((Time.now - twitterclon.created_at)/60).to_i %> minutos.</p>
+            <p><%= twitterclon.description %></p>
+            <p><%= link_to "Ver Tweet", twitterclon %></p>
+          </div>
         </div>
       </div>
     </div>
-  </div> 
   <% end %>
 </div>
-
+<%#= link_to '', new_twitterclon_path, class: 'boton-flotante' %>
+<%= link_to '', new_twitterclon_path, class: 'boton-nuevoTweet' %>
 <%=raw pagy_nav(@pagy)%>
-
-

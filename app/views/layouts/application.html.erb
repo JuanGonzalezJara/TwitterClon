@@ -5,25 +5,26 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;700&display=swap" rel="stylesheet">
+    <script src="stylesheets/style.css"></script>
   </head>
-
-  <body>
+  <body class="fontformat">
     <nav class="navbar bg-body-tertiary">
-    <div class="container-fluid">
-    <a class="navbar-brand" href="#">Twitter Clone</a
-
-
-    <%= form_with url: twitterclons_path, method: :get do |form|%>
-    <%= form.text_field :query_text, placeholder: 'Ingresa tu busqueda', value: params[:query_text]%>
-    <%end%>
-    </div>
+      <div class="container-fluid ">
+        <a class="navbar-brand" href="twitterclons#index">
+          <%= image_tag('BK_bird_resized.png', alt:'Logo', class:'img-fluid w-50 h-10') %>
+          <span class='marca'>Twitter Clone</span></a>
+        <%= form_with url: twitterclons_path, method: :get do |form|%>
+          <%= form.text_field :query_text, placeholder: 'Ingresa tu busqueda', value: params[:query_text] %>
+        <%end%>
+      </div>
     </nav>
     <%= yield %>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

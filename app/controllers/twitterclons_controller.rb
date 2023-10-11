@@ -3,13 +3,13 @@ class TwitterclonsController < ApplicationController
 
   # GET /twitterclons or /twitterclons.json
   def index
-    @twitterclons = Twitterclon.all
-    @pagy, @twitterclons = pagy(Twitterclon.all)
-    
     if params[:query_text].present?
-      @twitterclons = @twitterclons.search_by_name(params[:query_text])
-      end
+      twitterclons = Twitterclon.search_by_name(params[:query_text])
+    else
+      twitterclons = Twitterclon.all
+    end
 
+    @pagy, @twitterclons = pagy(twitterclons)
   end
 
   # GET /twitterclons/1 or /twitterclons/1.json
@@ -64,13 +64,14 @@ class TwitterclonsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_twitterclon
-      @twitterclon = Twitterclon.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def twitterclon_params
-      params.require(:twitterclon).permit(:description, :username)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_twitterclon
+    @twitterclon = Twitterclon.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def twitterclon_params
+    params.require(:twitterclon).permit(:description, :username)
+  end
 end

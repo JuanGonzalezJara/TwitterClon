@@ -16,4 +16,6 @@
 </div>
 <%#= link_to '', new_twitterclon_path, class: 'boton-flotante' %>
 <%= link_to '', new_twitterclon_path, class: 'boton-nuevoTweet' %>
-<%=raw pagy_nav(@pagy)%>
+<%== pagy_bootstrap_nav(@pagy) %>
+<%# Validar cantidad de paginas %>
+<%= @pagy.pages %>

@@ -49,7 +49,7 @@ git push heroku main
 
 5: Debes ir a la página de tu aplicación en la web de [heroku](https://id.heroku.com/login) y dirigirte a la pestaña de la derecha que dice "More", Una vez que se despliegue el menú, selecciona la opción "Run console".
 
-![Logo!](https://s3.amazonaws.com/heroku-devcenter-files/article-images/1493833851-app-actions-menu.png)
+![Logo!](https://raw.githubusercontent.com/JuanGonzalezJara/TwitterClon/main/app/assets/images/heroku_menu_console.png?token=GHSAT0AAAAAACEFOVVZ3IZDU5RD6TGA7XBSZJHG6RA)
 
 
 6: Una vez que se despliegue la consola, asegúrate de crear la base de datos si aún no está creada, migrar los cambios y generar los datos mediante el archivo seed.rb:
